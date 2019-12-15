@@ -913,12 +913,16 @@ class IndexPage extends react__WEBPACK_IMPORTED_MODULE_7__["Component"] {
         lat: position.coords.latitude,
         lng: position.coords.longitude
       };
-      console.log(currentPosition);
-      console.log(this.state);
+      let newPeople = this.state.people;
+      newPeople.forEach(person => {
+        if (person.id === id) {
+          person.position = currentPosition;
+        }
+      });
+      console.log(newPeople);
       this.setState(prevState => _objectSpread({}, prevState, {
         currentLocation: currentPosition
-      }));
-      console.log(this.state); // axios.post(`/updateLocation/${id}`, location);
+      })); // axios.post(`/updateLocation/${id}`, location);
     });
 
     Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_6__["default"])(this, "getLivePosition", () => {

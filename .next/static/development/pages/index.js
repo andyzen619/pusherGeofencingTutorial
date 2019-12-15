@@ -32279,16 +32279,20 @@ function (_Component) {
         lat: position.coords.latitude,
         lng: position.coords.longitude
       };
-      console.log(currentPosition);
-      console.log(_this.state);
+      var newPeople = _this.state.people;
+      newPeople.forEach(function (person) {
+        if (person.id === id) {
+          person.position = currentPosition;
+        }
+      });
+      console.log(newPeople);
 
       _this.setState(function (prevState) {
         return _objectSpread({}, prevState, {
           currentLocation: currentPosition
         });
-      });
+      }); // axios.post(`/updateLocation/${id}`, location);
 
-      console.log(_this.state); // axios.post(`/updateLocation/${id}`, location);
     });
 
     Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_12__["default"])(Object(_babel_runtime_corejs2_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_10__["default"])(_this), "getLivePosition", function () {

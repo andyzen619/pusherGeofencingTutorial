@@ -57,14 +57,18 @@ class IndexPage extends Component {
       lng: position.coords.longitude
     }
 
-    console.log(currentPosition)
-    console.log(this.state);
+    let newPeople = this.state.people;
+    newPeople.forEach(person => {
+      if(person.id === id) {
+        person.position = currentPosition;
+      }
+    })
+    console.log(newPeople);
+
     this.setState(prevState => ({
       ...prevState,
       currentLocation: currentPosition
     }));
-
-    console.log(this.state)
     // axios.post(`/updateLocation/${id}`, location);
   }
 
