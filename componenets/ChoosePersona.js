@@ -20,6 +20,8 @@ const ChoosePersona = props => {
   const randomPeople = count => people => {
 
     const selected = [];
+    // Andy Is always in selected
+    //selected.push(props.people[0])
     let i = 0;
 
     count = Math.max(0, Math.min(count, people.length));
@@ -31,6 +33,7 @@ const ChoosePersona = props => {
     }
 
     return selected.map(index => {
+      
       const { id, name } = people[index];
       const className = 'd-flex align-items-center text-center text-white bg-secondary font-weight-bold py-2 px-4 mx-1 my-2';
 
@@ -38,7 +41,9 @@ const ChoosePersona = props => {
     });
 
   };
-
+  
+  console.log(props)
+  console.log(count)
   return (
     <div className="w-100 h-100 px-3 pb-5 d-flex flex-wrap align-items-center align-content-center justify-content-center">
       <span className="h3 text-dark text-center py-3 w-100 font-weight-bold">Choose your Persona</span>

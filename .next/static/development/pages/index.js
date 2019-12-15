@@ -41,7 +41,9 @@ var ChoosePersona = function ChoosePersona(props) {
 
   var randomPeople = function randomPeople(count) {
     return function (people) {
-      var selected = [];
+      var selected = []; // Andy Is always in selected
+      //selected.push(props.people[0])
+
       var i = 0;
       count = Math.max(0, Math.min(count, people.length));
 
@@ -67,6 +69,8 @@ var ChoosePersona = function ChoosePersona(props) {
     };
   };
 
+  console.log(props);
+  console.log(count);
   return __jsx("div", {
     className: "w-100 h-100 px-3 pb-5 d-flex flex-wrap align-items-center align-content-center justify-content-center"
   }, __jsx("span", {

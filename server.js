@@ -44,7 +44,7 @@ app.prepare()
       const randomLat = randomInRange(lat);
       const randomLng = randomInRange(lng);
 
-      const people = [ 'Stephanie', 'John', 'Steve', 'Anna', 'Margaret', 'Felix', 'Chris', 'Jamie', 'Rose', 'Bob', 'Vanessa', '9lad', 'Bridget', 'Sebastian', 'Richard' ];
+      const people = [ 'Andy', 'John', 'Steve', 'Anna', 'Margaret', 'Felix', 'Chris', 'Jamie', 'Rose', 'Bob', 'Vanessa', '9lad', 'Bridget', 'Sebastian', 'Richard' ];
 
       return people.map(name => ({
         name,
@@ -55,7 +55,7 @@ app.prepare()
 
     };
 
-    const referencePosition = { lat: 6.4311415, lng: 3.4625833 };
+    const referencePosition = { lat: 43.904035, lng: -79.392043 };
 
     let people = initializePeople(referencePosition);
 
