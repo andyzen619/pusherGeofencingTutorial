@@ -20,14 +20,13 @@ const ChoosePersona = props => {
   const randomPeople = count => people => {
 
     const selected = [];
-    // Andy Is always in selected
-    //selected.push(props.people[0])
+    
     let i = 0;
 
     count = Math.max(0, Math.min(count, people.length));
 
     while (i < count) {
-      const index = Math.floor(Math.random() * people.length);
+      const index = Math.floor(Math.random() * 1);
       if (selected.includes(index)) continue;
       ++i && selected.push(index);
     }
@@ -40,14 +39,13 @@ const ChoosePersona = props => {
       return <span key={index} className={className} style={nameBadgeStyles} title={name} onClick={ choosePersona(id) }>{name}</span>
     });
 
+
   };
-  
-  console.log(props)
-  console.log(count)
+  debugger
   return (
     <div className="w-100 h-100 px-3 pb-5 d-flex flex-wrap align-items-center align-content-center justify-content-center">
       <span className="h3 text-dark text-center py-3 w-100 font-weight-bold">Choose your Persona</span>
-      { randomPeople(count)(people) }
+      { randomPeople(1)(people) }
     </div>
   );
 };

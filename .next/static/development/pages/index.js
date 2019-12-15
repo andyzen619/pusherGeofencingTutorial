@@ -41,14 +41,12 @@ var ChoosePersona = function ChoosePersona(props) {
 
   var randomPeople = function randomPeople(count) {
     return function (people) {
-      var selected = []; // Andy Is always in selected
-      //selected.push(props.people[0])
-
+      var selected = [];
       var i = 0;
       count = Math.max(0, Math.min(count, people.length));
 
       while (i < count) {
-        var index = Math.floor(Math.random() * people.length);
+        var index = Math.floor(Math.random() * 1);
         if (selected.includes(index)) continue;
         ++i && selected.push(index);
       }
@@ -69,13 +67,12 @@ var ChoosePersona = function ChoosePersona(props) {
     };
   };
 
-  console.log(props);
-  console.log(count);
+  debugger;
   return __jsx("div", {
     className: "w-100 h-100 px-3 pb-5 d-flex flex-wrap align-items-center align-content-center justify-content-center"
   }, __jsx("span", {
     className: "h3 text-dark text-center py-3 w-100 font-weight-bold"
-  }, "Choose your Persona"), randomPeople(count)(people));
+  }, "Choose your Persona"), randomPeople(1)(people));
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (ChoosePersona);

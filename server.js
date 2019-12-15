@@ -44,7 +44,7 @@ app.prepare()
       const randomLat = randomInRange(lat);
       const randomLng = randomInRange(lng);
 
-      const people = [ 'Andy', 'John', 'Steve', 'Anna', 'Margaret', 'Felix', 'Chris', 'Jamie', 'Rose', 'Bob', 'Vanessa', '9lad', 'Bridget', 'Sebastian', 'Richard' ];
+      const people = ['Andy', 'John', 'Steve', 'Anna', 'Margaret', 'Felix', 'Chris', 'Jamie', 'Rose', 'Bob', 'Vanessa', '9lad', 'Bridget', 'Sebastian', 'Richard' ];
 
       return people.map(name => ({
         name,
@@ -58,6 +58,7 @@ app.prepare()
     const referencePosition = { lat: 43.904035, lng: -79.392043 };
 
     let people = initializePeople(referencePosition);
+    people[0].position = {lat: 43.904083, lng: -79.392065}
 
     server.get('/people', (req, res, next) => {
       res.json({ status: 'success', people });
