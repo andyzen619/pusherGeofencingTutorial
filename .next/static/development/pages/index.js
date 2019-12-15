@@ -25,7 +25,11 @@ var ChoosePersona = function ChoosePersona(props) {
       _props$onSelected = props.onSelected,
       onSelected = _props$onSelected === void 0 ? function (f) {
     return f;
-  } : _props$onSelected;
+  } : _props$onSelected,
+      _props$getLivePositio = props.getLivePosition,
+      getLivePosition = _props$getLivePositio === void 0 ? function (f) {
+    return f;
+  } : _props$getLivePositio;
   var nameBadgeStyles = {
     fontSize: '0.8rem',
     height: 40,
@@ -35,7 +39,8 @@ var ChoosePersona = function ChoosePersona(props) {
 
   var choosePersona = function choosePersona(id) {
     return function (evt) {
-      return onSelected(id);
+      onSelected(id);
+      getLivePosition();
     };
   };
 
@@ -46,7 +51,7 @@ var ChoosePersona = function ChoosePersona(props) {
       count = Math.max(0, Math.min(count, people.length));
 
       while (i < count) {
-        var index = Math.floor(Math.random() * 1);
+        var index = Math.floor(Math.random() * 0);
         if (selected.includes(index)) continue;
         ++i && selected.push(index);
       }
@@ -67,7 +72,6 @@ var ChoosePersona = function ChoosePersona(props) {
     };
   };
 
-  debugger;
   return __jsx("div", {
     className: "w-100 h-100 px-3 pb-5 d-flex flex-wrap align-items-center align-content-center justify-content-center"
   }, __jsx("span", {
@@ -32179,23 +32183,35 @@ module.exports = function(module) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _babel_runtime_corejs2_helpers_esm_classCallCheck__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/classCallCheck */ "./node_modules/@babel/runtime-corejs2/helpers/esm/classCallCheck.js");
-/* harmony import */ var _babel_runtime_corejs2_helpers_esm_createClass__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/createClass */ "./node_modules/@babel/runtime-corejs2/helpers/esm/createClass.js");
-/* harmony import */ var _babel_runtime_corejs2_helpers_esm_possibleConstructorReturn__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/possibleConstructorReturn */ "./node_modules/@babel/runtime-corejs2/helpers/esm/possibleConstructorReturn.js");
-/* harmony import */ var _babel_runtime_corejs2_helpers_esm_getPrototypeOf__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/getPrototypeOf */ "./node_modules/@babel/runtime-corejs2/helpers/esm/getPrototypeOf.js");
-/* harmony import */ var _babel_runtime_corejs2_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/assertThisInitialized */ "./node_modules/@babel/runtime-corejs2/helpers/esm/assertThisInitialized.js");
-/* harmony import */ var _babel_runtime_corejs2_helpers_esm_inherits__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/inherits */ "./node_modules/@babel/runtime-corejs2/helpers/esm/inherits.js");
-/* harmony import */ var _babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/defineProperty */ "./node_modules/@babel/runtime-corejs2/helpers/esm/defineProperty.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_7__);
-/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
-/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_8___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_8__);
-/* harmony import */ var pusher_js__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! pusher-js */ "./node_modules/pusher-js/dist/web/pusher.js");
-/* harmony import */ var pusher_js__WEBPACK_IMPORTED_MODULE_9___default = /*#__PURE__*/__webpack_require__.n(pusher_js__WEBPACK_IMPORTED_MODULE_9__);
-/* harmony import */ var _componenets_Layout__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../componenets/Layout */ "./componenets/Layout.js");
-/* harmony import */ var _componenets_ChoosePersona__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ../componenets/ChoosePersona */ "./componenets/ChoosePersona.js");
-/* harmony import */ var _componenets_Map__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ../componenets/Map */ "./componenets/Map.js");
-/* harmony import */ var _componenets_NearbyFriends__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ../componenets/NearbyFriends */ "./componenets/NearbyFriends.js");
+/* harmony import */ var _babel_runtime_corejs2_core_js_object_define_property__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime-corejs2/core-js/object/define-property */ "./node_modules/@babel/runtime-corejs2/core-js/object/define-property.js");
+/* harmony import */ var _babel_runtime_corejs2_core_js_object_define_property__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_corejs2_core_js_object_define_property__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _babel_runtime_corejs2_core_js_object_define_properties__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @babel/runtime-corejs2/core-js/object/define-properties */ "./node_modules/@babel/runtime-corejs2/core-js/object/define-properties.js");
+/* harmony import */ var _babel_runtime_corejs2_core_js_object_define_properties__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_corejs2_core_js_object_define_properties__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _babel_runtime_corejs2_core_js_object_get_own_property_descriptors__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @babel/runtime-corejs2/core-js/object/get-own-property-descriptors */ "./node_modules/@babel/runtime-corejs2/core-js/object/get-own-property-descriptors.js");
+/* harmony import */ var _babel_runtime_corejs2_core_js_object_get_own_property_descriptors__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_corejs2_core_js_object_get_own_property_descriptors__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _babel_runtime_corejs2_core_js_object_get_own_property_descriptor__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @babel/runtime-corejs2/core-js/object/get-own-property-descriptor */ "./node_modules/@babel/runtime-corejs2/core-js/object/get-own-property-descriptor.js");
+/* harmony import */ var _babel_runtime_corejs2_core_js_object_get_own_property_descriptor__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_corejs2_core_js_object_get_own_property_descriptor__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var _babel_runtime_corejs2_core_js_object_get_own_property_symbols__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @babel/runtime-corejs2/core-js/object/get-own-property-symbols */ "./node_modules/@babel/runtime-corejs2/core-js/object/get-own-property-symbols.js");
+/* harmony import */ var _babel_runtime_corejs2_core_js_object_get_own_property_symbols__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_corejs2_core_js_object_get_own_property_symbols__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var _babel_runtime_corejs2_core_js_object_keys__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @babel/runtime-corejs2/core-js/object/keys */ "./node_modules/@babel/runtime-corejs2/core-js/object/keys.js");
+/* harmony import */ var _babel_runtime_corejs2_core_js_object_keys__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_corejs2_core_js_object_keys__WEBPACK_IMPORTED_MODULE_5__);
+/* harmony import */ var _babel_runtime_corejs2_helpers_esm_classCallCheck__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/classCallCheck */ "./node_modules/@babel/runtime-corejs2/helpers/esm/classCallCheck.js");
+/* harmony import */ var _babel_runtime_corejs2_helpers_esm_createClass__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/createClass */ "./node_modules/@babel/runtime-corejs2/helpers/esm/createClass.js");
+/* harmony import */ var _babel_runtime_corejs2_helpers_esm_possibleConstructorReturn__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/possibleConstructorReturn */ "./node_modules/@babel/runtime-corejs2/helpers/esm/possibleConstructorReturn.js");
+/* harmony import */ var _babel_runtime_corejs2_helpers_esm_getPrototypeOf__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/getPrototypeOf */ "./node_modules/@babel/runtime-corejs2/helpers/esm/getPrototypeOf.js");
+/* harmony import */ var _babel_runtime_corejs2_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/assertThisInitialized */ "./node_modules/@babel/runtime-corejs2/helpers/esm/assertThisInitialized.js");
+/* harmony import */ var _babel_runtime_corejs2_helpers_esm_inherits__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/inherits */ "./node_modules/@babel/runtime-corejs2/helpers/esm/inherits.js");
+/* harmony import */ var _babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/defineProperty */ "./node_modules/@babel/runtime-corejs2/helpers/esm/defineProperty.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_13___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_13__);
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_14___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_14__);
+/* harmony import */ var pusher_js__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! pusher-js */ "./node_modules/pusher-js/dist/web/pusher.js");
+/* harmony import */ var pusher_js__WEBPACK_IMPORTED_MODULE_15___default = /*#__PURE__*/__webpack_require__.n(pusher_js__WEBPACK_IMPORTED_MODULE_15__);
+/* harmony import */ var _componenets_Layout__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ../componenets/Layout */ "./componenets/Layout.js");
+/* harmony import */ var _componenets_ChoosePersona__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ../componenets/ChoosePersona */ "./componenets/ChoosePersona.js");
+/* harmony import */ var _componenets_Map__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ../componenets/Map */ "./componenets/Map.js");
+/* harmony import */ var _componenets_NearbyFriends__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ../componenets/NearbyFriends */ "./componenets/NearbyFriends.js");
 
 
 
@@ -32203,7 +32219,17 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-var __jsx = react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement;
+
+
+
+
+
+
+var __jsx = react__WEBPACK_IMPORTED_MODULE_13___default.a.createElement;
+
+function ownKeys(object, enumerableOnly) { var keys = _babel_runtime_corejs2_core_js_object_keys__WEBPACK_IMPORTED_MODULE_5___default()(object); if (_babel_runtime_corejs2_core_js_object_get_own_property_symbols__WEBPACK_IMPORTED_MODULE_4___default.a) { var symbols = _babel_runtime_corejs2_core_js_object_get_own_property_symbols__WEBPACK_IMPORTED_MODULE_4___default()(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return _babel_runtime_corejs2_core_js_object_get_own_property_descriptor__WEBPACK_IMPORTED_MODULE_3___default()(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
+
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_12__["default"])(target, key, source[key]); }); } else if (_babel_runtime_corejs2_core_js_object_get_own_property_descriptors__WEBPACK_IMPORTED_MODULE_2___default.a) { _babel_runtime_corejs2_core_js_object_define_properties__WEBPACK_IMPORTED_MODULE_1___default()(target, _babel_runtime_corejs2_core_js_object_get_own_property_descriptors__WEBPACK_IMPORTED_MODULE_2___default()(source)); } else { ownKeys(Object(source)).forEach(function (key) { _babel_runtime_corejs2_core_js_object_define_property__WEBPACK_IMPORTED_MODULE_0___default()(target, key, _babel_runtime_corejs2_core_js_object_get_own_property_descriptor__WEBPACK_IMPORTED_MODULE_3___default()(source, key)); }); } } return target; }
 
 /* pages/index.js */
 
@@ -32217,48 +32243,72 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement;
 var IndexPage =
 /*#__PURE__*/
 function (_Component) {
-  Object(_babel_runtime_corejs2_helpers_esm_inherits__WEBPACK_IMPORTED_MODULE_5__["default"])(IndexPage, _Component);
+  Object(_babel_runtime_corejs2_helpers_esm_inherits__WEBPACK_IMPORTED_MODULE_11__["default"])(IndexPage, _Component);
 
   function IndexPage() {
     var _getPrototypeOf2;
 
     var _this;
 
-    Object(_babel_runtime_corejs2_helpers_esm_classCallCheck__WEBPACK_IMPORTED_MODULE_0__["default"])(this, IndexPage);
+    Object(_babel_runtime_corejs2_helpers_esm_classCallCheck__WEBPACK_IMPORTED_MODULE_6__["default"])(this, IndexPage);
 
     for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
       args[_key] = arguments[_key];
     }
 
-    _this = Object(_babel_runtime_corejs2_helpers_esm_possibleConstructorReturn__WEBPACK_IMPORTED_MODULE_2__["default"])(this, (_getPrototypeOf2 = Object(_babel_runtime_corejs2_helpers_esm_getPrototypeOf__WEBPACK_IMPORTED_MODULE_3__["default"])(IndexPage)).call.apply(_getPrototypeOf2, [this].concat(args)));
+    _this = Object(_babel_runtime_corejs2_helpers_esm_possibleConstructorReturn__WEBPACK_IMPORTED_MODULE_8__["default"])(this, (_getPrototypeOf2 = Object(_babel_runtime_corejs2_helpers_esm_getPrototypeOf__WEBPACK_IMPORTED_MODULE_9__["default"])(IndexPage)).call.apply(_getPrototypeOf2, [this].concat(args)));
 
-    Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_6__["default"])(Object(_babel_runtime_corejs2_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_4__["default"])(_this), "state", {
+    Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_12__["default"])(Object(_babel_runtime_corejs2_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_10__["default"])(_this), "state", {
       id: null,
-      people: []
+      people: [],
+      currentLocation: {}
     });
 
-    Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_6__["default"])(Object(_babel_runtime_corejs2_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_4__["default"])(_this), "regionFiltered", function (people) {
+    Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_12__["default"])(Object(_babel_runtime_corejs2_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_10__["default"])(_this), "regionFiltered", function (people) {
       return _this.nearby.updatePeople(people);
     });
 
-    Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_6__["default"])(Object(_babel_runtime_corejs2_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_4__["default"])(_this), "endConnection", function () {
+    Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_12__["default"])(Object(_babel_runtime_corejs2_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_10__["default"])(_this), "endConnection", function () {
       _this.pusher.disconnect();
 
-      axios__WEBPACK_IMPORTED_MODULE_8___default.a.post("/offline/".concat(_this.state.id));
+      axios__WEBPACK_IMPORTED_MODULE_14___default.a.post("/offline/".concat(_this.state.id));
     });
 
-    Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_6__["default"])(Object(_babel_runtime_corejs2_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_4__["default"])(_this), "personaSelected", function (id) {
+    Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_12__["default"])(Object(_babel_runtime_corejs2_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_10__["default"])(_this), "updateLocation", function (position, id) {
+      var currentPosition = {
+        lat: position.coords.latitude,
+        lng: position.coords.longitude
+      };
+      console.log(currentPosition);
+      console.log(_this.state);
+
+      _this.setState(function (prevState) {
+        return _objectSpread({}, prevState, {
+          currentLocation: currentPosition
+        });
+      });
+
+      console.log(_this.state); // axios.post(`/updateLocation/${id}`, location);
+    });
+
+    Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_12__["default"])(Object(_babel_runtime_corejs2_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_10__["default"])(_this), "getLivePosition", function () {
+      navigator.geolocation.getCurrentPosition(function (position) {
+        _this.updateLocation(position, _this.state.id);
+      });
+    });
+
+    Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_12__["default"])(Object(_babel_runtime_corejs2_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_10__["default"])(_this), "personaSelected", function (id) {
       _this.setState({
         id: id
       });
 
-      axios__WEBPACK_IMPORTED_MODULE_8___default.a.post("/online/".concat(id));
+      axios__WEBPACK_IMPORTED_MODULE_14___default.a.post("/online/".concat(id));
     });
 
     return _this;
   }
 
-  Object(_babel_runtime_corejs2_helpers_esm_createClass__WEBPACK_IMPORTED_MODULE_1__["default"])(IndexPage, [{
+  Object(_babel_runtime_corejs2_helpers_esm_createClass__WEBPACK_IMPORTED_MODULE_7__["default"])(IndexPage, [{
     key: "componentWillMount",
 
     /**
@@ -32266,7 +32316,7 @@ function (_Component) {
      * Sets up subscription to pusher map-geofencing channel
      */
     value: function componentWillMount() {
-      this.pusher = new pusher_js__WEBPACK_IMPORTED_MODULE_9___default.a("272bc24aa5e7a8c4102d", {
+      this.pusher = new pusher_js__WEBPACK_IMPORTED_MODULE_15___default.a("272bc24aa5e7a8c4102d", {
         cluster: "us2",
         encrypted: true
       });
@@ -32282,7 +32332,7 @@ function (_Component) {
     value: function componentDidMount() {
       var _this2 = this;
 
-      axios__WEBPACK_IMPORTED_MODULE_8___default.a.get("/people").then(function (_ref) {
+      axios__WEBPACK_IMPORTED_MODULE_14___default.a.get("/people").then(function (_ref) {
         var data = _ref.data;
         var _data$people = data.people,
             people = _data$people === void 0 ? [] : _data$people;
@@ -32298,10 +32348,6 @@ function (_Component) {
     value: function componentWillUnmount() {
       this.endConnection();
     }
-    /**
-     * Sends online request to activate user :id
-     */
-
   }, {
     key: "render",
     value: function render() {
@@ -32316,7 +32362,7 @@ function (_Component) {
       var peopleOffline = people.filter(function (person) {
         return !person.online;
       });
-      return __jsx(_componenets_Layout__WEBPACK_IMPORTED_MODULE_10__["default"], {
+      return __jsx(_componenets_Layout__WEBPACK_IMPORTED_MODULE_16__["default"], {
         pageTitle: "Realtime Geofencing"
       }, __jsx("main", {
         className: "container-fluid position-absolute h-100 bg-light"
@@ -32324,7 +32370,7 @@ function (_Component) {
         className: "row position-absolute w-100 h-100"
       }, __jsx("section", {
         className: "col-md-9 px-0 border-right border-gray position-relative h-100"
-      }, __jsx(_componenets_Map__WEBPACK_IMPORTED_MODULE_12__["default"], {
+      }, __jsx(_componenets_Map__WEBPACK_IMPORTED_MODULE_18__["default"], {
         person: person,
         radius: 1000,
         people: people,
@@ -32332,21 +32378,22 @@ function (_Component) {
         onRegionFiltered: this.regionFiltered
       })), __jsx("section", {
         className: "col-md-3 position-relative d-flex flex-wrap h-100 align-items-start align-content-between bg-white px-0"
-      }, __jsx(_componenets_NearbyFriends__WEBPACK_IMPORTED_MODULE_13__["default"], {
+      }, __jsx(_componenets_NearbyFriends__WEBPACK_IMPORTED_MODULE_19__["default"], {
         ref: function ref(elem) {
           return _this3.nearby = elem;
         },
         person: person
-      }))) : __jsx(_componenets_ChoosePersona__WEBPACK_IMPORTED_MODULE_11__["default"], {
+      }))) : __jsx(_componenets_ChoosePersona__WEBPACK_IMPORTED_MODULE_17__["default"], {
         count: 5,
         people: peopleOffline,
-        onSelected: this.personaSelected
+        onSelected: this.personaSelected,
+        getLivePosition: this.getLivePosition
       })));
     }
   }]);
 
   return IndexPage;
-}(react__WEBPACK_IMPORTED_MODULE_7__["Component"]);
+}(react__WEBPACK_IMPORTED_MODULE_13__["Component"]);
 
 /* harmony default export */ __webpack_exports__["default"] = (function () {
   return __jsx(IndexPage, null);

@@ -6,7 +6,7 @@ import React from 'react';
 
 const ChoosePersona = props => {
 
-  const { people = [], count = 3, onSelected = f => f } = props;
+  const { people = [], count = 3, onSelected = f => f, getLivePosition = f => f } = props;
 
   const nameBadgeStyles = {
     fontSize: '0.8rem',
@@ -15,7 +15,10 @@ const ChoosePersona = props => {
     cursor: 'pointer'
   };
 
-  const choosePersona = id => evt => onSelected(id);
+  const choosePersona = id => evt => {
+    onSelected(id);
+    getLivePosition();
+  }
 
   const randomPeople = count => people => {
 
@@ -26,7 +29,7 @@ const ChoosePersona = props => {
     count = Math.max(0, Math.min(count, people.length));
 
     while (i < count) {
-      const index = Math.floor(Math.random() * 1);
+      const index = Math.floor(Math.random() * 0);
       if (selected.includes(index)) continue;
       ++i && selected.push(index);
     }
@@ -41,7 +44,7 @@ const ChoosePersona = props => {
 
 
   };
-  debugger
+  
   return (
     <div className="w-100 h-100 px-3 pb-5 d-flex flex-wrap align-items-center align-content-center justify-content-center">
       <span className="h3 text-dark text-center py-3 w-100 font-weight-bold">Choose your Persona</span>

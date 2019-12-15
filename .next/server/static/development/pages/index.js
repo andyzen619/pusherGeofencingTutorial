@@ -114,7 +114,8 @@ const ChoosePersona = props => {
   const {
     people = [],
     count = 3,
-    onSelected = f => f
+    onSelected = f => f,
+    getLivePosition = f => f
   } = props;
   const nameBadgeStyles = {
     fontSize: '0.8rem',
@@ -123,7 +124,10 @@ const ChoosePersona = props => {
     cursor: 'pointer'
   };
 
-  const choosePersona = id => evt => onSelected(id);
+  const choosePersona = id => evt => {
+    onSelected(id);
+    getLivePosition();
+  };
 
   const randomPeople = count => people => {
     const selected = [];
@@ -131,7 +135,7 @@ const ChoosePersona = props => {
     count = Math.max(0, Math.min(count, people.length));
 
     while (i < count) {
-      const index = Math.floor(Math.random() * 1);
+      const index = Math.floor(Math.random() * 0);
       if (selected.includes(index)) continue;
       ++i && selected.push(index);
     }
@@ -152,7 +156,6 @@ const ChoosePersona = props => {
     });
   };
 
-  debugger;
   return __jsx("div", {
     className: "w-100 h-100 px-3 pb-5 d-flex flex-wrap align-items-center align-content-center justify-content-center"
   }, __jsx("span", {
@@ -843,19 +846,41 @@ function _extends() {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/defineProperty */ "./node_modules/@babel/runtime-corejs2/helpers/esm/defineProperty.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "react");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! axios */ "axios");
-/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var pusher_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! pusher-js */ "pusher-js");
-/* harmony import */ var pusher_js__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(pusher_js__WEBPACK_IMPORTED_MODULE_3__);
-/* harmony import */ var _componenets_Layout__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../componenets/Layout */ "./componenets/Layout.js");
-/* harmony import */ var _componenets_ChoosePersona__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../componenets/ChoosePersona */ "./componenets/ChoosePersona.js");
-/* harmony import */ var _componenets_Map__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../componenets/Map */ "./componenets/Map.js");
-/* harmony import */ var _componenets_NearbyFriends__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../componenets/NearbyFriends */ "./componenets/NearbyFriends.js");
+/* harmony import */ var _babel_runtime_corejs2_core_js_object_define_property__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime-corejs2/core-js/object/define-property */ "./node_modules/@babel/runtime-corejs2/core-js/object/define-property.js");
+/* harmony import */ var _babel_runtime_corejs2_core_js_object_define_property__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_corejs2_core_js_object_define_property__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _babel_runtime_corejs2_core_js_object_define_properties__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @babel/runtime-corejs2/core-js/object/define-properties */ "./node_modules/@babel/runtime-corejs2/core-js/object/define-properties.js");
+/* harmony import */ var _babel_runtime_corejs2_core_js_object_define_properties__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_corejs2_core_js_object_define_properties__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _babel_runtime_corejs2_core_js_object_get_own_property_descriptors__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @babel/runtime-corejs2/core-js/object/get-own-property-descriptors */ "./node_modules/@babel/runtime-corejs2/core-js/object/get-own-property-descriptors.js");
+/* harmony import */ var _babel_runtime_corejs2_core_js_object_get_own_property_descriptors__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_corejs2_core_js_object_get_own_property_descriptors__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _babel_runtime_corejs2_core_js_object_get_own_property_descriptor__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @babel/runtime-corejs2/core-js/object/get-own-property-descriptor */ "./node_modules/@babel/runtime-corejs2/core-js/object/get-own-property-descriptor.js");
+/* harmony import */ var _babel_runtime_corejs2_core_js_object_get_own_property_descriptor__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_corejs2_core_js_object_get_own_property_descriptor__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var _babel_runtime_corejs2_core_js_object_get_own_property_symbols__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @babel/runtime-corejs2/core-js/object/get-own-property-symbols */ "./node_modules/@babel/runtime-corejs2/core-js/object/get-own-property-symbols.js");
+/* harmony import */ var _babel_runtime_corejs2_core_js_object_get_own_property_symbols__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_corejs2_core_js_object_get_own_property_symbols__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var _babel_runtime_corejs2_core_js_object_keys__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @babel/runtime-corejs2/core-js/object/keys */ "./node_modules/@babel/runtime-corejs2/core-js/object/keys.js");
+/* harmony import */ var _babel_runtime_corejs2_core_js_object_keys__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_corejs2_core_js_object_keys__WEBPACK_IMPORTED_MODULE_5__);
+/* harmony import */ var _babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/defineProperty */ "./node_modules/@babel/runtime-corejs2/helpers/esm/defineProperty.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_7__);
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! axios */ "axios");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_8___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_8__);
+/* harmony import */ var pusher_js__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! pusher-js */ "pusher-js");
+/* harmony import */ var pusher_js__WEBPACK_IMPORTED_MODULE_9___default = /*#__PURE__*/__webpack_require__.n(pusher_js__WEBPACK_IMPORTED_MODULE_9__);
+/* harmony import */ var _componenets_Layout__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../componenets/Layout */ "./componenets/Layout.js");
+/* harmony import */ var _componenets_ChoosePersona__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ../componenets/ChoosePersona */ "./componenets/ChoosePersona.js");
+/* harmony import */ var _componenets_Map__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ../componenets/Map */ "./componenets/Map.js");
+/* harmony import */ var _componenets_NearbyFriends__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ../componenets/NearbyFriends */ "./componenets/NearbyFriends.js");
 
-var __jsx = react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement;
+
+
+
+
+
+
+var __jsx = react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement;
+
+function ownKeys(object, enumerableOnly) { var keys = _babel_runtime_corejs2_core_js_object_keys__WEBPACK_IMPORTED_MODULE_5___default()(object); if (_babel_runtime_corejs2_core_js_object_get_own_property_symbols__WEBPACK_IMPORTED_MODULE_4___default.a) { var symbols = _babel_runtime_corejs2_core_js_object_get_own_property_symbols__WEBPACK_IMPORTED_MODULE_4___default()(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return _babel_runtime_corejs2_core_js_object_get_own_property_descriptor__WEBPACK_IMPORTED_MODULE_3___default()(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
+
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_6__["default"])(target, key, source[key]); }); } else if (_babel_runtime_corejs2_core_js_object_get_own_property_descriptors__WEBPACK_IMPORTED_MODULE_2___default.a) { _babel_runtime_corejs2_core_js_object_define_properties__WEBPACK_IMPORTED_MODULE_1___default()(target, _babel_runtime_corejs2_core_js_object_get_own_property_descriptors__WEBPACK_IMPORTED_MODULE_2___default()(source)); } else { ownKeys(Object(source)).forEach(function (key) { _babel_runtime_corejs2_core_js_object_define_property__WEBPACK_IMPORTED_MODULE_0___default()(target, key, _babel_runtime_corejs2_core_js_object_get_own_property_descriptor__WEBPACK_IMPORTED_MODULE_3___default()(source, key)); }); } } return target; }
 
 /* pages/index.js */
 
@@ -866,27 +891,47 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement;
 
 
 
-class IndexPage extends react__WEBPACK_IMPORTED_MODULE_1__["Component"] {
+class IndexPage extends react__WEBPACK_IMPORTED_MODULE_7__["Component"] {
   constructor(...args) {
     super(...args);
 
-    Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_0__["default"])(this, "state", {
+    Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_6__["default"])(this, "state", {
       id: null,
-      people: []
+      people: [],
+      currentLocation: {}
     });
 
-    Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_0__["default"])(this, "regionFiltered", people => this.nearby.updatePeople(people));
+    Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_6__["default"])(this, "regionFiltered", people => this.nearby.updatePeople(people));
 
-    Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_0__["default"])(this, "endConnection", () => {
+    Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_6__["default"])(this, "endConnection", () => {
       this.pusher.disconnect();
-      axios__WEBPACK_IMPORTED_MODULE_2___default.a.post(`/offline/${this.state.id}`);
+      axios__WEBPACK_IMPORTED_MODULE_8___default.a.post(`/offline/${this.state.id}`);
     });
 
-    Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_0__["default"])(this, "personaSelected", id => {
+    Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_6__["default"])(this, "updateLocation", (position, id) => {
+      let currentPosition = {
+        lat: position.coords.latitude,
+        lng: position.coords.longitude
+      };
+      console.log(currentPosition);
+      console.log(this.state);
+      this.setState(prevState => _objectSpread({}, prevState, {
+        currentLocation: currentPosition
+      }));
+      console.log(this.state); // axios.post(`/updateLocation/${id}`, location);
+    });
+
+    Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_6__["default"])(this, "getLivePosition", () => {
+      navigator.geolocation.getCurrentPosition(position => {
+        this.updateLocation(position, this.state.id);
+      });
+    });
+
+    Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_6__["default"])(this, "personaSelected", id => {
       this.setState({
         id
       });
-      axios__WEBPACK_IMPORTED_MODULE_2___default.a.post(`/online/${id}`);
+      axios__WEBPACK_IMPORTED_MODULE_8___default.a.post(`/online/${id}`);
     });
   }
 
@@ -895,7 +940,7 @@ class IndexPage extends react__WEBPACK_IMPORTED_MODULE_1__["Component"] {
    * Sets up subscription to pusher map-geofencing channel
    */
   componentWillMount() {
-    this.pusher = new pusher_js__WEBPACK_IMPORTED_MODULE_3___default.a("272bc24aa5e7a8c4102d", {
+    this.pusher = new pusher_js__WEBPACK_IMPORTED_MODULE_9___default.a("272bc24aa5e7a8c4102d", {
       cluster: "us2",
       encrypted: true
     });
@@ -908,7 +953,7 @@ class IndexPage extends react__WEBPACK_IMPORTED_MODULE_1__["Component"] {
 
 
   componentDidMount() {
-    axios__WEBPACK_IMPORTED_MODULE_2___default.a.get("/people").then(({
+    axios__WEBPACK_IMPORTED_MODULE_8___default.a.get("/people").then(({
       data
     }) => {
       const {
@@ -924,10 +969,6 @@ class IndexPage extends react__WEBPACK_IMPORTED_MODULE_1__["Component"] {
   componentWillUnmount() {
     this.endConnection();
   }
-  /**
-   * Sends online request to activate user :id
-   */
-
 
   render() {
     const {
@@ -936,7 +977,7 @@ class IndexPage extends react__WEBPACK_IMPORTED_MODULE_1__["Component"] {
     } = this.state;
     const person = people.find(person => person.id === id) || {};
     const peopleOffline = people.filter(person => !person.online);
-    return __jsx(_componenets_Layout__WEBPACK_IMPORTED_MODULE_4__["default"], {
+    return __jsx(_componenets_Layout__WEBPACK_IMPORTED_MODULE_10__["default"], {
       pageTitle: "Realtime Geofencing"
     }, __jsx("main", {
       className: "container-fluid position-absolute h-100 bg-light"
@@ -944,7 +985,7 @@ class IndexPage extends react__WEBPACK_IMPORTED_MODULE_1__["Component"] {
       className: "row position-absolute w-100 h-100"
     }, __jsx("section", {
       className: "col-md-9 px-0 border-right border-gray position-relative h-100"
-    }, __jsx(_componenets_Map__WEBPACK_IMPORTED_MODULE_6__["default"], {
+    }, __jsx(_componenets_Map__WEBPACK_IMPORTED_MODULE_12__["default"], {
       person: person,
       radius: 1000,
       people: people,
@@ -952,13 +993,14 @@ class IndexPage extends react__WEBPACK_IMPORTED_MODULE_1__["Component"] {
       onRegionFiltered: this.regionFiltered
     })), __jsx("section", {
       className: "col-md-3 position-relative d-flex flex-wrap h-100 align-items-start align-content-between bg-white px-0"
-    }, __jsx(_componenets_NearbyFriends__WEBPACK_IMPORTED_MODULE_7__["default"], {
+    }, __jsx(_componenets_NearbyFriends__WEBPACK_IMPORTED_MODULE_13__["default"], {
       ref: elem => this.nearby = elem,
       person: person
-    }))) : __jsx(_componenets_ChoosePersona__WEBPACK_IMPORTED_MODULE_5__["default"], {
+    }))) : __jsx(_componenets_ChoosePersona__WEBPACK_IMPORTED_MODULE_11__["default"], {
       count: 5,
       people: peopleOffline,
-      onSelected: this.personaSelected
+      onSelected: this.personaSelected,
+      getLivePosition: this.getLivePosition
     })));
   }
 

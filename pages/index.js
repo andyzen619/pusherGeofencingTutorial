@@ -9,7 +9,7 @@ import Map from "../componenets/Map";
 import NearbyFriends from "../componenets/NearbyFriends";
 
 class IndexPage extends Component {
-  state = { id: null, people: [] };
+  state = { id: null, people: [], currentLocation: {} };
 
   regionFiltered = people => this.nearby.updatePeople(people);
 
@@ -51,10 +51,33 @@ class IndexPage extends Component {
     this.endConnection();
   }
 
+  updateLocation = (position, id) => {
+    let currentPosition = {
+      lat: position.coords.latitude,
+      lng: position.coords.longitude
+    }
+
+    console.log(currentPosition)
+    console.log(this.state);
+    this.setState(prevState => ({
+      ...prevState,
+      currentLocation: currentPosition
+    }));
+
+    console.log(this.state)
+    // axios.post(`/updateLocation/${id}`, location);
+  }
+
+  getLivePosition = () =>{
+    navigator.geolocation.getCurrentPosition(position => {
+      this.updateLocation(position, this.state.id);
+    });
+  }
+
   /**
-   * Sends online request to activate user :id
+   * Sends online and current location request to activate user :id
    */
-  personaSelected = id => {
+  personaSelected = (id) => {
     this.setState({ id });
     axios.post(`/online/${id}`);
   };
@@ -91,6 +114,7 @@ class IndexPage extends Component {
               count={5}
               people={peopleOffline}
               onSelected={this.personaSelected}
+              getLivePosition={this.getLivePosition}
             />
           )}
         </main>
