@@ -70,7 +70,7 @@ app
       }));
     };
 
-    const referencePosition = { lat: 43.904035, lng: 79.392043 };
+    const referencePosition = { lat: 43.654035, lng: -79.392043 };
 
     let people = initializePeople(referencePosition);
 
