@@ -1,6 +1,6 @@
 /* components/ChoosePersona.js */ 
 
-//*Componenet allwos up to activeate a selected user
+//*Componenet allows up to activeate a selected user
 
 import React from 'react';
 
