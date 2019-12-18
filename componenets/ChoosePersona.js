@@ -1,6 +1,6 @@
 /* components/ChoosePersona.js */ 
 
-//*Componenet allows up to activeate a selected user
+//*Componenet allows you to choose a person as current user
 
 import React from 'react';
 
